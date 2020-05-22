@@ -4,9 +4,9 @@
 }
 
 :root {
-  --color-aqua: rgb(0, 225, 210);
-  --color-side: rgb(0, 87, 81);
-  --color-aqua-item: rgb(97, 255, 205);
+  --color-aqua: rgb(84, 155, 150);
+  --color-side: rgb(0, 122, 114);
+  --color-aqua-item: rgb(60, 199, 155);
   --color-focus: rgb(93, 144, 255);
   --color-error: orangered;
   --color-primary: rgb(18, 102, 125);
@@ -59,10 +59,12 @@ html {
 
 .form-title {
   grid-column: 1 / -1;
+  text-align: center;
+  font-size: 4rem;
 }
 
 .input {
-  padding: .5rem 1rem;
+  padding: .7rem 1rem;
   border-radius: 3px;
   border: 2px solid var(--color-primary);
   font-size: 1.5rem;
@@ -71,13 +73,16 @@ html {
 .buttons {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: repeat(2, min-content);
   justify-items: end;
-  column-gap: 3rem;
 }
 
 .btn {
   padding: 1rem 2rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-size: 1.8rem;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .product-container {
@@ -87,14 +92,27 @@ html {
     minmax(3rem, 1fr) 
     repeat(10, minmax(min-content, 10rem)) 
     minmax(3rem, 1fr);
-  margin-top: 4rem;
+  margin-top: 8rem;
 }
 
 .product-item {
   grid-column: 2 / 12;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
   background-color: var(--color-aqua-item);
+  color: var(--color-white);
   display: grid;
   grid-template-columns: 10fr 5fr 3fr 1fr 1fr;
   font-size: 2rem;
+  text-transform: capitalize;
+}
+
+.product-item:nth-child(even) {
+  background-color: var(--color-side);
+}
+
+.product-remove {
+  justify-self: end;
+  color: var(--color-error);
+  font-weight: 600;
+  cursor: pointer;
 }

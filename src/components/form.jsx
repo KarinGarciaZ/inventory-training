@@ -6,6 +6,9 @@ import Input from './input';
 const Form = () => {
   const [ state, dispatch ] = useContext(ProductsContext);
   const [isEdit, setIsEdit] = useState(false);
+  const name = useInput('');
+  const price = useInput('');
+  const brand = useInput('');
 
   useEffect(() => {
     if ( state.selectedProduct ) {
@@ -14,11 +17,7 @@ const Form = () => {
       brand.changeValue(state.selectedProduct.brand);
       setIsEdit(true);
     }
-  }, [state.selectedProduct])
-
-  const name = useInput('');
-  const price = useInput('');
-  const brand = useInput('');
+  }, [state.selectedProduct]);
 
   const saveProduct = e => {
     e.preventDefault();
@@ -46,7 +45,7 @@ const Form = () => {
 
   return (
     <form onSubmit={saveProduct} className="form">
-      <h2 className='form-title'>Create a product</h2>
+      <h2 className='form-title'>{isEdit? 'Edit':'Create'} a Product</h2>
       <Input value={name.value} handleChange={name.changeValue} placeholder='name' />
       <Input value={price.value} handleChange={price.changeValue} placeholder='price' />
       <Input value={brand.value} handleChange={brand.changeValue} placeholder='brand' />

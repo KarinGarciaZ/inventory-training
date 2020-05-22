@@ -7,6 +7,6 @@ export const useInput = (initialValue) => {
       (e) => { 
           e.target? setValue(e.target.value): setValue(e);
       }
-  , [setValue])
+  , [])
   return {value, changeValue}
 }

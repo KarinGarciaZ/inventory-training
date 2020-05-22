@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 
-const Input = ({value, handleChange, placeholder}) => {
+const Input = memo(({value, handleChange, placeholder}) => {
+
   return (
     <input 
       type='text' 
@@ -9,6 +10,6 @@ const Input = ({value, handleChange, placeholder}) => {
       value={value} 
       onChange={handleChange} />
   )
-}
+})
 
 export default Input;

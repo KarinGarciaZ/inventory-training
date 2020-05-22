@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 
-export const ProductsContext = React.createContext()
+export const ProductsContext = React.createContext();
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -35,7 +35,8 @@ export const Provider = props => {
   const initialState = {
     products: [],
     selectedProduct: null
-  }
+  };
+  
   const productsContextValue = useReducer( reducer, initialState )
 
   return (
