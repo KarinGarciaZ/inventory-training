@@ -1,38 +1,100 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --color-aqua: rgb(0, 225, 210);
+  --color-side: rgb(0, 87, 81);
+  --color-aqua-item: rgb(97, 255, 205);
+  --color-focus: rgb(93, 144, 255);
+  --color-error: orangered;
+  --color-primary: rgb(18, 102, 125);
+  --color-white: rgb(233, 244, 249);
+  --color-green: rgb(7, 191, 7);
+  --color-yellow: rgb(239, 239, 12);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html {
+  box-sizing: content-box;
+  font-family: 'Nunito', sans-serif;
+  font-size: 10px;
+  box-sizing: inherit;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.container {
+  display: grid;
+  grid-template-columns: 25rem 1fr;
+  grid-template-rows: repeat(3, min-content);
 }
 
-.App-link {
-  color: #61dafb;
+.header {
+  grid-column: 1 / -1;
+  height: 8vh;
+  background-color: var(--color-aqua);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sidebar {
+  grid-row: 2 / -1;
+  background-color: var(--color-side);
+  height: 92vh;
+}
+
+.todo-container {
+  display: grid;
+  grid-template-columns: 
+    minmax(3rem, 1fr) 
+    repeat(10, minmax(min-content, 10rem)) 
+    minmax(3rem, 1fr);
+  margin-top: 4rem;
+}
+
+.form {
+  grid-column: 2 / 12;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 8rem;
+  row-gap: 5rem;
+}
+
+.form-title {
+  grid-column: 1 / -1;
+}
+
+.input {
+  padding: .5rem 1rem;
+  border-radius: 3px;
+  border: 2px solid var(--color-primary);
+  font-size: 1.5rem;
+}
+
+.buttons {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, min-content);
+  justify-items: end;
+  column-gap: 3rem;
+}
+
+.btn {
+  padding: 1rem 2rem;
+}
+
+.product-container {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 
+    minmax(3rem, 1fr) 
+    repeat(10, minmax(min-content, 10rem)) 
+    minmax(3rem, 1fr);
+  margin-top: 4rem;
+}
+
+.product-item {
+  grid-column: 2 / 12;
+  padding: 1rem 2rem;
+  background-color: var(--color-aqua-item);
+  display: grid;
+  grid-template-columns: 10fr 5fr 3fr 1fr 1fr;
+  font-size: 2rem;
 }
