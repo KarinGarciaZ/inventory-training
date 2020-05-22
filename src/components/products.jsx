@@ -24,9 +24,20 @@ const Products = () => {
       deleteProduct={deleteProduct}/>
   })
 
-  return (
-    <div className="product-container">{productsElements}</div>
-  )
+  if ( productsElements.length ) {
+    return (
+      <div className="product-container">
+        <div className="product">
+          <span>Name</span>
+          <span>Brand</span>
+          <span>Price</span>
+        </div>
+        {productsElements}
+      </div>
+    )
+  }
+  
+  return null;
 }
 
 export default Products;

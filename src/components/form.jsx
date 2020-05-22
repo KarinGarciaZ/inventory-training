@@ -36,11 +36,15 @@ const Form = () => {
         dispatch({type: 'add', payload: productToSave});
       }
 
-      name.changeValue('');
-      price.changeValue('');
-      brand.changeValue('');
-      setIsEdit(false);
+      clearForm();
     }
+  }
+
+  const clearForm = () => {
+    name.changeValue('');
+    price.changeValue('');
+    brand.changeValue('');
+    setIsEdit(false);
   }
 
   return (
@@ -50,6 +54,13 @@ const Form = () => {
       <Input value={price.value} handleChange={price.changeValue} placeholder='price' />
       <Input value={brand.value} handleChange={brand.changeValue} placeholder='brand' />
       <div className="buttons">
+        <button 
+          className="btn btn-clear" 
+          onClick={clearForm.bind(this)} 
+          type="button"
+          >
+            Cancel
+          </button>
         <button className="btn">Save</button>
       </div>
     </form>

@@ -73,6 +73,8 @@ html {
 .buttons {
   grid-column: 1 / -1;
   display: grid;
+  grid-template-columns: 1fr min-content;
+  column-gap: 2rem;
   justify-items: end;
 }
 
@@ -85,6 +87,10 @@ html {
   cursor: pointer;
 }
 
+.btn-clear {
+  background-color: var(--color-error);
+}
+
 .product-container {
   grid-column: 1 / -1;
   display: grid;
@@ -95,15 +101,19 @@ html {
   margin-top: 8rem;
 }
 
-.product-item {
+.product {
+  padding: 1rem 2rem;
   grid-column: 2 / 12;
-  padding: 1.5rem 2rem;
-  background-color: var(--color-aqua-item);
-  color: var(--color-white);
   display: grid;
   grid-template-columns: 10fr 5fr 3fr 1fr 1fr;
   font-size: 2rem;
   text-transform: capitalize;
+}
+
+.product-item {
+  padding: 1.5rem 2rem;
+  background-color: var(--color-aqua-item);
+  color: var(--color-white);
 }
 
 .product-item:nth-child(even) {
@@ -114,5 +124,9 @@ html {
   justify-self: end;
   color: var(--color-error);
   font-weight: 600;
+  cursor: pointer;
+}
+
+.product-edit {
   cursor: pointer;
 }
